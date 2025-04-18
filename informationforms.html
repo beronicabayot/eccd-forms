@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Child Development Center Information</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-4 sm:p-6 text-black">
+  <div class="max-w-6xl mx-auto bg-white shadow-md rounded-xl p-6 sm:p-8 space-y-6">
+    <h2 class="text-lg sm:text-xl font-semibold mb-4 text-center leading-relaxed">
+      ASSESSMENT TOOL FOR THE GRANTING OF RECOGNITION TO CHILD DEVELOPMENT CENTERS/LEARNING CENTERS OFFERING EARLY CHILDHOOD PROGRAMS FOR THE 0 TO 4 YEARS OLD FILIPINO CHILDREN
+    </h2>
+    
+    <h2 class="text-xl font-semibold text-black">A. General Information</h2>
+
+    <form onsubmit="redirectToRegistration(); return false;" class="space-y-8">
+      <div class="mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+
+          <!-- Status of Application -->
+          <div>
+            <h2 class="font-semibold border-b pb-1 mb-4">Status of Application</h2>
+            <div class="space-y-2">
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="applicationStatus" value="new" class="h-4 w-4 text-green-600">
+                <span>New application</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="applicationStatus" value="re-application" class="h-4 w-4 text-green-600">
+                <span>Re-Application</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="applicationStatus" value="renewal" class="h-4 w-4 text-green-600">
+                <span>Renewal</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Source of Funds -->
+          <div>
+            <h2 class="font-semibold border-b pb-1 mb-4">Source of Funds</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="sourceOfFunds" value="NGA" class="h-4 w-4 text-green-600">
+                <span>National Government Agency (NGA)</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="sourceOfFunds" value="GOCC" class="h-4 w-4 text-green-600">
+                <span>Government-Owned and/or Controlled Corporation (GOCC)</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="sourceOfFunds" value="LGU" class="h-4 w-4 text-green-600">
+                <span>Local Government Unit (LGU)</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="sourceOfFunds" value="NGO" class="h-4 w-4 text-green-600">
+                <span>Non Government Office (NGO)</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="sourceOfFunds" value="PO" class="h-4 w-4 text-green-600">
+                <span>People's Organization (PO)</span>
+              </label>
+              <label class="flex items-center space-x-2">
+                <input type="radio" name="sourceOfFunds" value="Private Individual" class="h-4 w-4 text-green-600">
+                <span>Private Individual</span>
+              </label>
+              <label class="flex items-center space-x-2 sm:col-span-2">
+                <input type="checkbox" id="othersCheckbox" onchange="toggleOther(this.checked)" class="h-4 w-4 text-green-600">
+                <span>Others</span>
+              </label>
+            </div>
+            <div id="otherInputDiv" class="mt-2 hidden">
+              <input type="text" id="otherInput" name="otherOption" placeholder="Please specify" class="w-full border border-gray-300 rounded-lg px-4 py-2">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text Inputs -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block font-semibold mb-2">Name of Child Development Center/Learning Center</label>
+          <input type="text" name="center_name" required placeholder="ABC Learning Center" class="w-full border border-gray-300 rounded-lg px-4 py-2">
+        </div>
+        <div>
+          <label class="block font-semibold mb-2">Address</label>
+          <input type="text" name="address_no" required placeholder="Street No, Street Name, Barangay, City, ZIP Code" class="w-full border border-gray-300 rounded-lg px-4 py-2">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <label class="block font-semibold mb-2">Date Established</label>
+          <input type="date" name="date_established" required class="w-full border border-gray-300 rounded-lg px-4 py-2">
+        </div>
+        <div>
+          <label class="block font-semibold mb-2">Name of Child Development Teacher/Worker</label>
+          <input type="text" name="worker_name" required placeholder="Maria Dela Cruz" class="w-full border border-gray-300 rounded-lg px-4 py-2">
+        </div>
+        <div>
+          <label class="block font-semibold mb-2">Age</label>
+          <input type="number" name="worker_age" required placeholder="30" class="w-full border border-gray-300 rounded-lg px-4 py-2">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block font-semibold mb-2">Name of C/MSWDO/ECCD Focal Person Supervising the Program</label>
+          <input type="text" name="focal_person" required placeholder="Juan Santos" class="w-full border border-gray-300 rounded-lg px-4 py-2">
+        </div>
+        <div>
+          <label class="block font-semibold mb-2">Telephone/Mobile/Fax Number/s</label>
+          <input type="text" name="contact_number" required placeholder="0917-123-4567 / (02) 1234-5678" class="w-full border border-gray-300 rounded-lg px-4 py-2">
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block font-semibold mb-2">Email Address</label>
+          <input type="email" name="email" required placeholder="example@gmail.com" class="w-full border border-gray-300 rounded-lg px-4 py-2">
+        </div>
+        <div>
+          <label class="block font-semibold mb-2">Registration & License No.</label>
+          <input type="text" name="reg_license" required placeholder="2025-ABC-00123" class="w-full border border-gray-300 rounded-lg px-4 py-2">
+        </div>
+      </div>
+
+      <div class="text-center pt-4">
+        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition duration-200">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function toggleOther(show) {
+      const otherInputDiv = document.getElementById('otherInputDiv');
+      const otherInput = document.getElementById('otherInput');
+      if (show) {
+        otherInputDiv.classList.remove("hidden");
+        otherInput.focus();
+      } else {
+        otherInputDiv.classList.add("hidden");
+        otherInput.value = '';
+      }
+    }
+
+    function redirectToRegistration() {
+      alert("Form submitted successfully!");
+      window.location.href = "thank-you.html"; // Replace with actual redirect URL
+    }
+  </script>
+</body>
+</html>
