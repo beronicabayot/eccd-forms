@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a part of the Early Childhood Care and Development (ECCD) system designed to collect and manage essential information related to child development centers. The Information Page** allows users to enter and submit general information about a Child Development Center/Learning Center for assessment, recognition, and licensing purposes.
+This project is a part of the Early Childhood Care and Development (ECCD) system designed to collect and manage essential information related to child development centers. The Information Page allows users to enter and submit general information about a Child Development Center/Learning Center for assessment, recognition, and licensing purposes.
 
 ## Features
 
