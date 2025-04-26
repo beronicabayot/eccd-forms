@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checklist on Essential Elements of the Center</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    textarea {
+      transition: height 0.2s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-4 sm:p-6 text-black">
+
+  <!-- Wrap the entire content in a form element -->
+  <form id="checklistForm" onsubmit="handleNext(event)">
+    <div class="max-w-6xl mx-auto bg-white shadow-md rounded-xl p-6 sm:p-8 space-y-6">
+      <h1 class="text-center text-xl font-bold mb-8">CHECKLIST ON THE ESSENTIAL ELEMENTS OF THE CENTER</h1>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border border-black text-sm">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="border border-black px-4 py-2 text-center">ELEMENTS</th>
+              <th class="border border-black px-4 py-2">YES</th>
+              <th class="border border-black px-4 py-2">NO</th>
+              <th class="border border-black px-4 py-2 text-center">REMARKS</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            <!-- Section A -->
+            <tr class="bg-gray-200 font-semibold">
+              <td colspan="4" class="border border-black px-4 py-2">A. Center Environment</td>
+            </tr>
+            
+            <!-- Row 1 -->
+            <tr>
+              <td class="border border-black px-4 py-2">1. Does the Center have a safe and healthy learning environment?</td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question1" value="yes" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question1" value="no" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black px-3 py-2">
+                  <textarea 
+                    rows="1" 
+                    oninput="autoResize(this)" 
+                    class="w-full border-none outline-none text-sm overflow-hidden resize-none"
+                  ></textarea>
+              </td>
+            </tr>
+
+            <!-- Row 2 -->
+            <tr>
+              <td class="border border-black px-4 py-2">2. Does the Center promote a child-friendly environment?</td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question2" value="yes" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question2" value="no" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black px-3 py-2">
+                  <textarea 
+                    rows="1" 
+                    oninput="autoResize(this)" 
+                    class="w-full border-none outline-none text-sm overflow-hidden resize-none"
+                  ></textarea>
+                </td>
+            </tr>
+
+            <!-- Row 3 -->
+            <tr>
+              <td class="border border-black px-4 py-2">3. Does the Center protect the children from abuse and neglect?</td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question3" value="yes" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question3" value="no" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black px-3 py-2">
+                  <textarea 
+                    rows="1" 
+                    oninput="autoResize(this)" 
+                    class="w-full border-none outline-none text-sm overflow-hidden resize-none"
+
+                  ></textarea>
+                </td>
+            </tr>
+
+            <!-- Row 4 -->
+            <tr>
+              <td class="border border-black px-4 py-2">4. Is the Center accessible to all children in the community?</td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question4" value="yes" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question4" value="no" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black px-3 py-2">
+                  <textarea 
+                    rows="1" 
+                    oninput="autoResize(this)" 
+                    class="w-full border-none outline-none text-sm overflow-hidden resize-none"
+                  ></textarea>
+                </td>
+            </tr>
+
+            <!-- Section B -->
+            <tr class="bg-gray-200 font-semibold">
+              <td colspan="4" class="border border-black px-4 py-2">B. Clientele/Children Served</td>
+            </tr>
+
+            <!-- Row 5 -->
+            <tr>
+              <td class="border border-black px-4 py-2">5. Does the Center have the list of names of children ages one (1) to four (4) years living in the community?</td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question5" value="yes" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question5" value="no" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black px-3 py-2">
+                  <textarea 
+                    rows="1" 
+                    oninput="autoResize(this)" 
+                    class="w-full border-none outline-none text-sm overflow-hidden resize-none"
+                  ></textarea>
+                </td>
+            </tr>
+
+            <!-- Row 6 -->
+            <tr>
+              <td class="border border-black px-4 py-2">6. Are the parents/guardian aware of the location and the services provided by the Center?</td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question6" value="yes" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question6" value="no" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black px-3 py-2">
+                  <textarea 
+                    rows="1" 
+                    oninput="autoResize(this)" 
+                    class="w-full border-none outline-none text-sm overflow-hidden resize-none"
+                  ></textarea>
+                </td>
+            </tr>
+
+            <!-- Section C -->
+            <tr class="bg-gray-200 font-semibold">
+              <td colspan="4" class="border border-black px-4 py-2">C. Child Development Teacher/Worker and Other Staff</td>
+            </tr>
+
+            <!-- Row 7 -->
+            <tr>
+              <td class="border border-black px-4 py-2">7. Is there an available Child Development Teacher/Worker in the Center?</td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question7" value="yes" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question7" value="no" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black px-3 py-2">
+                  <textarea 
+                    rows="1" 
+                    oninput="autoResize(this)" 
+                    class="w-full border-none outline-none text-sm overflow-hidden resize-none"
+
+                  ></textarea>
+                </td>
+            </tr>
+
+            <!-- Row 8 -->
+            <tr>
+              <td class="border border-black px-4 py-2">8. Does the Barangay Nutrition Scholar provide assistance to the Child Development Teacher/Worker?</td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question8" value="yes" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question8" value="no" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black px-3 py-2">
+                  <textarea 
+                    rows="1" 
+                    oninput="autoResize(this)" 
+                    class="w-full border-none outline-none text-sm overflow-hidden resize-none"
+                  ></textarea>
+                </td>
+            </tr>
+
+            <!-- Row 9 -->
+            <tr>
+              <td class="border border-black px-4 py-2">9. Does the City/Municipal/Barangay Health Worker provide assistance to the Child Development Teacher/Worker?</td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question9" value="yes" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question9" value="no" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black px-3 py-2">
+                  <textarea 
+                    rows="1" 
+                    oninput="autoResize(this)" 
+                    class="w-full border-none outline-none text-sm overflow-hidden resize-none"
+                  ></textarea>
+                </td>
+            </tr>
+
+            <!-- Row 10 -->
+            <tr>
+              <td class="border border-black px-4 py-2">10. Are there parents/volunteers in the Center?</td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question10" value="yes" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black text-center">
+                <input type="checkbox" name="question10" value="no" onclick="onlyOne(this)">
+              </td>
+              <td class="border border-black px-3 py-2">
+                  <textarea 
+                    rows="1" 
+                    oninput="autoResize(this)" 
+                    class="w-full border-none outline-none text-sm overflow-hidden resize-none"
+
+                  ></textarea>
+                </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-6">
+          <p class="font-medium">EVALUATED BY:</p>
+          
+          <div class="flex mt-6">
+            <div class="w-1/2 ">
+              <input type="text" class="border-b border-black w-3/4 mb-1 cursor-pointer focus:outline-none " placeholder="Name of Evaluator">
+              <p>Name &amp; Signature</p>
+              <p class="italic">City/Municipal Social Development Officer/</p>
+              <p class="italic">ECCD Focal Person</p>
+            </div>
+            
+            <div class="w-1/2">
+              <input type="date" class="border-b border-black w-1/2 mb-1 cursor-pointer focus:outline-none"> 
+              <p>Date</p>
+            </div>
+          </div>
+        </div>
+
+      <div class="flex justify-between items-center pt-6">
+        <button type="button" onclick="goBack()" class="border border-gray-300 bg-white text-black px-6 py-2 rounded hover:bg-gray-200 hover:border-gray-400 transition">
+          <span class="font-semibold">← Back</span>
+        </button>
+        <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition">
+          Next →
+        </button>
+      </div>
+
+    </div>
+  </form>
+
+  <script>
+    function onlyOne(checkbox) {
+      const checkboxes = document.getElementsByName(checkbox.name);
+      checkboxes.forEach((item) => {
+        if (item !== checkbox) item.checked = false;
+      });
+    }
+
+    function autoResize(textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    }
+
+    function goBack() {
+      window.history.back();
+      window.location.href = '../Appendix B/AppendixB1.html';
+    }
+
+    function handleNext(event) {
+      event.preventDefault(); // Prevent form submission
+      const form = document.getElementById("checklistForm");
+      const data = new FormData(form);
+      const output = {};
+
+      for (const [key, value] of data.entries()) {
+        output[key] = value;
+        localStorage.setItem(key, value); // Save each entry to localStorage
+      }
+
+      // Optional: log the saved data
+      console.log('Saved to localStorage:', output);
+
+      // Redirect to the next page
+      window.location.href = "../Appendix C/AppendixC.html";
+    }
+  </script>
+
+</body>
+</html>

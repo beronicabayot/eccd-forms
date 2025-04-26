@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>APPENDIX A</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 p-4 sm:p-6">
+
+  <div class="max-w-6xl mx-auto bg-white shadow-md rounded-xl p-4 sm:p-6 md:p-8 space-y-6">
+    <!-- Heading Section -->
+    <h2 class="text-sm font-bold text-gray-600 mb-2 text-center">APPENDIX A</h2>
+    <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-center">REGISTRATION FORM FOR THE PUBLIC/PRIVATE CDC/LC</h2>
+ 
+    <form onsubmit="handleNext(event)" class="space-y-6">
+
+      <!-- Section 1 -->
+      <div>
+        <label class="block font-semibold mb-2">1. Name of Child Development Center/Learning Center:</label>
+        <input type="text" placeholder="e.g., ABC Learning Center" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" name="center_name" />
+      </div>
+
+      <!-- Section 2 -->
+      <div class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4">
+        <label class="font-semibold whitespace-nowrap">2. Type:</label>
+        <div class="flex flex-wrap gap-4">
+          <label class="inline-flex items-center">
+            <input type="radio" name="type" value="Public" class="custom-green text-green-600 focus:ring-green-500 mr-2"> Public
+          </label>
+          <label class="inline-flex items-center">
+            <input type="radio" name="type" value="Private" class="text-green-600 focus:ring-green-500 mr-2"> Private
+          </label>
+        </div>
+      </div>         
+
+      <!-- Private types -->
+      <div class="flex flex-col md:flex-row items-start gap-2 md:gap-4">
+        <label class="font-semibold">If Private, indicate type:</label>
+        <div class="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-4">
+          <label class="inline-flex items-center">
+            <input type="radio" name="type_private" value="Church-based" class="text-green-600 focus:ring-green-500 mr-2"> Church-based
+          </label>
+          <label class="inline-flex items-center">
+            <input type="radio" name="type_private" value="NGO" class="text-green-600 focus:ring-green-500 mr-2"> Non-government organization/Foundation Initiated
+          </label>
+          <label class="inline-flex items-center">
+            <input type="radio" name="type_private" value="Community" class="text-green-600 focus:ring-green-500 mr-2"> Community-based
+          </label>
+        </div>
+      </div>
+
+      <!-- Address -->
+      <div class="space-y-4">
+        <h3 class="text-lg font-semibold">3. Address</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <label class="block font-semibold mb-2">No.</label>
+            <input type="text" name="address_no" placeholder="e.g., 123" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500">
+          </div>
+          <div>
+            <label class="block font-semibold mb-2">Street</label>
+            <input type="text" name="address_street" placeholder="e.g., Amang Rodriguez Avenue" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500">
+          </div>
+          <div>
+            <label class="block font-semibold mb-2">Barangay/Subdivision</label>
+            <input type="text" name="address_barangay" placeholder="e.g., Barangay Santolan" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <label class="block font-semibold mb-2">City/Municipality</label>
+            <input type="text" name="address_city" placeholder="e.g., Pasig City" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500">
+          </div>
+          <div>
+            <label class="block font-semibold mb-2">Province</label>
+            <input type="text" name="address_province" placeholder="e.g., Metro Manila" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500">
+          </div>
+          <div>
+            <label class="block font-semibold mb-2">Region</label>
+            <input type="text" name="address_region" placeholder="e.g., NCR (National Capital Region)" required class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500">
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4 & 5 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block font-semibold mb-2">4. Date Established:</label>
+          <input type="date" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" name="date_established" />
+        </div>
+        <div>
+          <label class="block font-semibold mb-2">5. Early Childhood Programs Offered:</label>
+          <div class="flex flex-wrap gap-4">
+            <label class="inline-flex items-center">
+              <input type="radio" name="programs" value="Infants" class="text-green-600 focus:ring-green-500 mr-2"> Infants
+            </label>
+            <label class="inline-flex items-center">
+              <input type="radio" name="programs" value="Toddlers" class="text-green-600 focus:ring-green-500 mr-2"> Toddlers
+            </label>
+            <label class="inline-flex items-center">
+              <input type="radio" name="programs" value="Pre-K1" class="text-green-600 focus:ring-green-500 mr-2"> Pre-K1
+            </label>
+            <label class="inline-flex items-center">
+              <input type="radio" name="programs" value="Pre-K2" class="text-green-600 focus:ring-green-500 mr-2"> Pre-K2
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 6 -->
+      <div class="flex flex-col md:flex-row gap-4">
+        <div class="w-full md:w-1/2">
+          <label class="block font-semibold mb-2">6. Name of Barangay Captain/Authorized Person (Public CDC):</label>
+          <input type="text" placeholder="e.g., Hon. Juan Dela Cruz" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" name="barangay_captain" />
+        </div>
+        <div class="w-full md:w-1/2">
+          <label class="block font-medium mb-2 break-words">Name of Administrator/Director/Principal (Private CDC/LC):</label>
+          <input type="text" placeholder="e.g., Maria L. Santos" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" name="admin_director" />
+        </div>
+      </div>      
+
+      <!-- Buttons -->
+      <div class="flex justify-between items-center pt-6">
+        <button type="button" onclick="goBack()" class="border border-gray-300 bg-white text-black px-6 py-2 rounded hover:bg-gray-200 hover:border-gray-400 transition">
+          <span class="font-semibold">← Back</span>
+        </button>
+        <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition">
+          Next →
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+
+    function handleNext(event) {
+      event.preventDefault();
+
+      const form = event.target;
+      const data = new FormData(form);
+
+      for (const [key, value] of data.entries()) {
+        localStorage.setItem(key, value);
+      }
+
+      window.location.href = "AppendixA1.html"; 
+    }
+  </script>
+
+</body>
+</html>

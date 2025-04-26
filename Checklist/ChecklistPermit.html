@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checklist of Requirements for Permit To Operate</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    textarea {
+      transition: height 0.2s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-4 sm:p-6 text-black">
+
+  <div class="max-w-6xl mx-auto bg-white shadow-md rounded-xl p-6 sm:p-8 space-y-6">
+    <h1 class="text-center text-xl font-bold mb-8">CHECKLIST REQUIREMENTS FOR PERMIT TO OPERATE</h1>
+
+    <div class="overflow-x-auto">
+      <table class="w-full border border-black text-sm">
+        <thead>
+          <tr class="bg-gray-100">
+            <th class="border border-black px-4 py-2 text-center">ELEMENTS</th>
+            <th class="border border-black px-4 py-2">YES</th>
+            <th class="border border-black px-4 py-2">NO</th>
+            <th class="border border-black px-4 py-2 text-center">REMARKS</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <!-- Section A -->
+          <tr class="bg-gray-200 font-semibold">
+            <td colspan="4" class="border border-black px-4 py-2">A. Requirements for Submission (One [1] copy each)</td>
+          </tr>
+
+          <!-- Rows -->
+          <tr>
+            <td class="border border-black px-4 py-2">1. Photo copy of the SEC Registration (with the Original Copy for presentation only)</td>
+            <td class="border border-black text-center"><input type="checkbox" name="question1" value="yes" onclick="onlyOne(this)"></td>
+            <td class="border border-black text-center"><input type="checkbox" name="question1" value="no" onclick="onlyOne(this)"></td>
+            <td class="border border-black px-3 py-2">
+              <textarea rows="1" oninput="autoResize(this)" class="w-full border-none outline-none text-sm overflow-hidden resize-none"></textarea>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="border border-black px-4 py-2">2. Profile of the Center that describes its location, ownership, goals and objectives, and the program(s) to be offered</td>
+            <td class="border border-black text-center"><input type="checkbox" name="question2" value="yes" onclick="onlyOne(this)"></td>
+            <td class="border border-black text-center"><input type="checkbox" name="question2" value="no" onclick="onlyOne(this)"></td>
+            <td class="border border-black px-3 py-2">
+              <textarea rows="1" oninput="autoResize(this)" class="w-full border-none outline-none text-sm overflow-hidden resize-none"></textarea>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="border border-black px-4 py-2">3. Description with photographs of the lot size, indoor and outdoor area, number of buildings/ classrooms, facilities, equipment and instructional materials available for effective instruction</td>
+            <td class="border border-black text-center"><input type="checkbox" name="question3" value="yes" onclick="onlyOne(this)"></td>
+            <td class="border border-black text-center"><input type="checkbox" name="question3" value="no" onclick="onlyOne(this)"></td>
+            <td class="border border-black px-3 py-2">
+              <textarea rows="1" oninput="autoResize(this)" class="w-full border-none outline-none text-sm overflow-hidden resize-none"></textarea>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="border border-black px-4 py-2">4. Number of young children to be served, list of teachers, names of administrator/principal/director and other staff</td>
+            <td class="border border-black text-center"><input type="checkbox" name="question4" value="yes" onclick="onlyOne(this)"></td>
+            <td class="border border-black text-center"><input type="checkbox" name="question4" value="no" onclick="onlyOne(this)"></td>
+            <td class="border border-black px-3 py-2">
+              <textarea rows="1" oninput="autoResize(this)" class="w-full border-none outline-none text-sm overflow-hidden resize-none"></textarea>
+            </td>
+          </tr>
+
+          <!-- Section B -->
+          <tr class="bg-gray-200 font-semibold">
+            <td colspan="4" class="border border-black px-4 py-2">B. Other Information Needed</td>
+          </tr>
+
+          <tr>
+            <td class="border border-black px-4 py-2">1. Do the outdoor and classroom environment ensure access for children and adults with special needs (ramps, railings)?</td>
+            <td class="border border-black text-center"><input type="checkbox" name="question5" value="yes" onclick="onlyOne(this)"></td>
+            <td class="border border-black text-center"><input type="checkbox" name="question5" value="no" onclick="onlyOne(this)"></td>
+            <td class="border border-black px-3 py-2">
+              <textarea rows="1" oninput="autoResize(this)" class="w-full border-none outline-none text-sm overflow-hidden resize-none"></textarea>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="border border-black px-4 py-2">2. Does the CDC/LC meet the current state and local building codes, and safety requirements?</td>
+            <td class="border border-black text-center"><input type="checkbox" name="question6" value="yes" onclick="onlyOne(this)"></td>
+            <td class="border border-black text-center"><input type="checkbox" name="question6" value="no" onclick="onlyOne(this)"></td>
+            <td class="border border-black px-3 py-2">
+              <textarea rows="1" oninput="autoResize(this)" class="w-full border-none outline-none text-sm overflow-hidden resize-none"></textarea>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="border border-black px-4 py-2">3. Are the windows and doors constructed to prevent injury to children?</td>
+            <td class="border border-black text-center"><input type="checkbox" name="question7" value="yes" onclick="onlyOne(this)"></td>
+            <td class="border border-black text-center"><input type="checkbox" name="question7" value="no" onclick="onlyOne(this)"></td>
+            <td class="border border-black px-3 py-2">
+              <textarea rows="1" oninput="autoResize(this)" class="w-full border-none outline-none text-sm overflow-hidden resize-none"></textarea>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="border border-black px-4 py-2">4. Can the door’s entry and exit be opened inward and outward but not swinging?</td>
+            <td class="border border-black text-center"><input type="checkbox" name="question8" value="yes" onclick="onlyOne(this)"></td>
+            <td class="border border-black text-center"><input type="checkbox" name="question8" value="no" onclick="onlyOne(this)"></td>
+            <td class="border border-black px-3 py-2">
+              <textarea rows="1" oninput="autoResize(this)" class="w-full border-none outline-none text-sm overflow-hidden resize-none"></textarea>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="border border-black px-4 py-2">5. Does the CDC/LC promote a child-friendly environment?</td>
+            <td class="border border-black text-center"><input type="checkbox" name="question9" value="yes" onclick="onlyOne(this)"></td>
+            <td class="border border-black text-center"><input type="checkbox" name="question9" value="no" onclick="onlyOne(this)"></td>
+            <td class="border border-black px-3 py-2">
+              <textarea rows="1" oninput="autoResize(this)" class="w-full border-none outline-none text-sm overflow-hidden resize-none"></textarea>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mt-6">
+      <p class="font-medium">EVALUATED BY:</p>
+
+      <div class="flex mt-6">
+        <div class="w-1/2">
+          <input type="text" class="border-b border-black w-3/4 mb-1 cursor-pointer focus:outline-none" placeholder="Name of Evaluator">
+          <p>Name &amp; Signature</p>
+          <p class="italic">City/Municipal Social Development Officer/</p>
+          <p class="italic">ECCD Focal Person</p>
+        </div>
+
+        <div class="w-1/2">
+          <input type="date" class="border-b border-black w-3/4 mb-1 cursor-pointer focus:outline-none">
+          <p>Date</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-between items-center pt-6">
+      <button type="button" onclick="goBack()" class="border border-gray-300 bg-white text-black px-6 py-2 rounded hover:bg-gray-200 hover:border-gray-400 transition">
+        <span class="font-semibold">← Back</span>
+      </button>
+      <button type="button" onclick="handleNext(event)" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition">
+        Next →
+      </button>
+    </div>
+
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    function onlyOne(checkbox) {
+      const checkboxes = document.getElementsByName(checkbox.name);
+      checkboxes.forEach(cb => {
+        if (cb !== checkbox) cb.checked = false;
+      });
+    }
+
+    function autoResize(textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    }
+
+    function goBack() {
+      window.history.back();
+      window.location.href = '../Appendix C/AppendixC.html';
+    }
+
+    function handleNext(event) {
+      event.preventDefault();
+      const data = {};
+
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+      checkboxes.forEach(cb => {
+        data[cb.name] = cb.value;
+        localStorage.setItem(cb.name, cb.value);
+      });
+
+      const textareas = document.querySelectorAll('textarea');
+      textareas.forEach((textarea, index) => {
+        const key = `remark${index + 1}`;
+        data[key] = textarea.value;
+        localStorage.setItem(key, textarea.value);
+      });
+
+      const inputs = document.querySelectorAll('input[type="text"], input[type="date"]');
+      inputs.forEach((input, index) => {
+        const key = input.placeholder || `input${index + 1}`;
+        data[key] = input.value;
+        localStorage.setItem(key, input.value);
+      });
+
+      console.log('Saved to localStorage:', data);
+
+      window.location.href = "../Appendix D/ObservationSheet.html";
+    }
+  </script>
+
+</body>
+</html>

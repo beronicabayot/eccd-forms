@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interview Sheet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 p-4 sm:p-6 text-black">
+
+    <div class="max-w-6xl mx-auto bg-white shadow-md rounded-xl p-6 sm:p-8 space-y-6">
+    <div class="mb-6">
+      <h3 class="text-lg font-medium text-gray-800 mb-4">2. Interview Sheet</h3>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full table-auto border border-black text-sm text-gray-700">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="border border-black px-2 py-2 text-center">DATE</th>
+              <th class="border border-black px-4 py-3 text-center">INDICATOR NO. / AREA OF FOCUS</th>
+              <th class="border border-black px-4 py-3 text-center">PERSON(S) INTERVIEWED/RESPONDENTS</th>
+              <th class="border border-black px-10 py-3 text-center">RESPONSES/INTERVIEW NOTES</th>
+            </tr>
+          </thead>
+          <tbody id="observationTableBody" class="bg-white divide-y divide-gray-200">
+            <!-- Initial 10 rows will be inserted here -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ADD NEW SHEET BUTTON -->
+      <div class="flex justify-end mt-4">
+        <button 
+          onclick="addInterviewSheet()" 
+          class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg text-sm transition"
+        >
+          + Add New Interview Sheet
+        </button>
+      </div>
+
+    </div>
+
+    <div class="flex justify-between items-center pt-6">
+        <button type="button" onclick="goBack()" class="border border-gray-300 bg-white text-black px-6 py-2 rounded hover:bg-gray-200 hover:border-gray-400 transition">
+          <span class="font-semibold">← Back</span>
+        </button>
+        <button type="button" onclick="goToNextPage()" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition">
+          Next →
+        </button>
+      </div>
+    
+  </div>
+
+  <!-- JavaScript Part -->
+  <script>
+    function autoResize(textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    }
+
+    function createRow() {
+      return `
+        <tr>
+          <td class="border border-black px-3 py-2">
+            <input 
+              type="date" 
+              class="w-full border-none outline-none text-center text-sm" 
+            />
+          </td>
+          <td class="border border-black px-3 py-2">
+            <textarea 
+              rows="1" 
+              oninput="autoResize(this)" 
+              class="w-full border-none outline-none text-sm overflow-hidden resize-none"
+            ></textarea>
+          </td>
+          <td class="border border-black px-3 py-2">
+            <textarea 
+              rows="1" 
+              oninput="autoResize(this)" 
+              class="w-full border-none outline-none text-sm overflow-hidden resize-none"
+            ></textarea>
+          </td>
+          <td class="border border-black px-3 py-2">
+            <textarea 
+              rows="1" 
+              oninput="autoResize(this)" 
+              class="w-full border-none outline-none text-sm overflow-hidden resize-none"
+            ></textarea>
+          </td>
+        </tr>
+      `;
+    }
+
+    function addInterviewSheet() {
+      const tableBody = document.getElementById('observationTableBody');
+      // Add only 1 row at a time
+      tableBody.insertAdjacentHTML('beforeend', createRow());
+    }
+
+    // Initial 10 rows upon loading
+    window.onload = function() {
+      for (let i = 0; i < 10; i++) {
+        addInterviewSheet();
+      }
+    };
+
+    // Function for going back to the Observation Sheet page
+    function goBack() {
+      window.location.href = 'ObservationSheet.html'; // Navigate to ObservationSheet
+    }
+
+    // Function for navigating to the Document Review Sheet
+    function goToNextPage() {
+      window.location.href = 'DocumentReviewSheet.html'; // Navigate to DocumentReviewSheet
+    }
+  </script>
+
+</body>
+</html>

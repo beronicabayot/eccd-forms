@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Observation Sheet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="bg-gray-100 p-4 sm:p-6 text-black">
+
+    <div class="max-w-6xl mx-auto bg-white shadow-md rounded-xl p-6 sm:p-8 space-y-6">
+    <div class="mb-6">
+      <h3 class="text-lg font-medium text-gray-800 mb-4">3. Document Review Sheet</h3>
+      
+      <div class="overflow-x-auto">
+        <table class="w-full table-auto border border-black text-sm text-gray-700">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="border border-black px-2 py-2 text-center">DATE</th>
+              <th class="border border-black px-4 py-3 text-center">INDICATOR NO. / AREA OF FOCUS</th>
+              <th class="border border-black px-4 py-3 text-center">DOCUMENTS REVIEWED</th>
+              <th class="border border-black px-10 py-3 text-center">FINDINGS</th>
+            </tr>
+          </thead>
+          <tbody id="observationTableBody" class="bg-white divide-y divide-gray-200">
+            <!-- Initial 10 rows will be inserted here -->
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ADD NEW SHEET BUTTON -->
+      <div class="flex justify-end mt-4">
+        <button 
+          onclick="addDocumentReviewSheet()" 
+          class="bg-blue-600 hover:bg-darkblue-700 text-white font-medium py-2 px-4 rounded-lg text-sm transition"
+        >
+          + Add New Document Review Sheet
+        </button>
+      </div>
+
+    </div>
+
+    <div class="flex justify-between items-center pt-6">
+        <button type="button" onclick="goBack()" class="border border-gray-300 bg-white text-black px-6 py-2 rounded hover:bg-gray-200 hover:border-gray-400 transition">
+          <span class="font-semibold">← Back</span>
+        </button>
+        <button type="button" onclick="goToNextPage()" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition">
+          Next →
+        </button>
+      </div>
+    
+  </div>
+
+  <!-- JavaScript Part -->
+  <script>
+    function autoResize(textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    }
+
+    function createRow() {
+      return `
+        <tr>
+          <td class="border border-black px-3 py-2">
+            <input 
+              type="date" 
+              class="w-full border-none outline-none text-center text-sm" 
+            />
+          </td>
+          <td class="border border-black px-3 py-2">
+            <textarea 
+              rows="1" 
+              oninput="autoResize(this)" 
+              class="w-full border-none outline-none text-sm overflow-hidden resize-none"
+            ></textarea>
+          </td>
+          <td class="border border-black px-3 py-2">
+            <!-- Hidden File Input with Label for Icon -->
+            <label for="fileInput" class="cursor-pointer text-blue-600 hover:text-blue-700">
+              <i class="fas fa-paperclip text-lg"></i> Choose Document
+            </label>
+            <input 
+              id="fileInput" 
+              type="file" 
+              class="hidden" 
+              accept="application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+            />
+          </td>
+          <td class="border border-black px-3 py-2">
+            <textarea 
+              rows="1" 
+              oninput="autoResize(this)" 
+              class="w-full border-none outline-none text-sm overflow-hidden resize-none"
+            ></textarea>
+          </td>
+        </tr>
+      `;
+    }
+
+    function addDocumentReviewSheet() {
+      const tableBody = document.getElementById('observationTableBody');
+      // Add only 1 row at a time
+      tableBody.insertAdjacentHTML('beforeend', createRow());
+    }
+
+    // Initial 10 rows upon loading
+    window.onload = function() {
+      for (let i = 0; i < 10; i++) {
+        addDocumentReviewSheet();
+      }
+    };
+
+    // Function for going back to the appropriate page
+    function goBack() {
+      const currentPage = window.location.pathname;
+
+      if (currentPage.includes('DocumentReviewSheet.html')) {
+        window.location.href = 'InterviewSheet.html'; // Go back to InterviewSheet
+      } else if (currentPage.includes('InterviewSheet.html')) {
+        window.location.href = 'ObservationSheet.html'; // Go back to ObservationSheet
+      } else {
+        window.history.back(); // For any other cases, just go back in the history stack
+      }
+    }
+
+    // Function for navigating to the next page
+    function goToNextPage() {
+      const currentPage = window.location.pathname;
+
+      if (currentPage.includes('ObservationSheet.html')) {
+        window.location.href = 'InterviewSheet.html'; // Go to InterviewSheet from ObservationSheet
+      } else if (currentPage.includes('InterviewSheet.html')) {
+        window.location.href = 'DocumentReviewSheet.html'; // Go to DocumentReviewSheet from InterviewSheet
+      } else {
+        window.location.href = 'DocumentReviewSheet.html'; // Default behavior
+      }
+    }
+  </script>
+
+</body>
+</html>

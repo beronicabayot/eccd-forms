@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APPENDIX B</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 p-4 sm:p-6">
+
+  <div class="max-w-6xl mx-auto bg-white shadow-md rounded-xl p-4 sm:p-6 md:p-8 space-y-6">
+    <form action="#" method="post" class="space-y-5">
+
+      <!-- Teachers Section -->
+      <div>
+        <label class="block font-semibold mb-2">8. Name(s) of Child Development Teacher(s)/Worker(s)</label>
+        <div id="teachersContainer" class="space-y-3">
+          <input type="text" placeholder="e.g., Juan Dela Cruz" name="teacher_name[]" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" />
+        </div>
+      </div>
+
+      <div class="flex justify-end mt-4">
+        <button 
+          type="button"
+          onclick="addNew()" 
+          class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg text-sm transition"
+        >
+          + Add New
+        </button>
+      </div>
+
+      <!-- Contact Information in 3 Columns -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+        <!-- Contact Person -->
+        <div>
+          <label for="contact-person" class="block text-sm font-medium text-gray-700">8. Contact Person of the Center:</label>
+          <input type="text" id="contact-person" name="contact-person" placeholder="e.g., Maria Santos" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" />
+        </div>
+
+        <!-- Contact Number -->
+        <div>
+          <label for="contact-number" class="block text-sm font-medium text-gray-700">Telephone/Mobile/Fax No. of the Center:</label>
+          <input type="text" id="contact-number" name="contact-number" placeholder="e.g., (02) 8123-4567 / 0917-123-4567" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" />
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">10. E-mail Address of the Center/Contact Person:</label>
+          <input type="email" id="email" name="email" placeholder="e.g., contact@center.org" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" />
+        </div>
+      </div>
+
+    
+      <!-- Button Section -->
+      <div class="flex justify-between items-center pt-6">
+        <button type="button" onclick="goBack()" class="border border-gray-300 bg-white text-black px-6 py-2 rounded hover:bg-gray-200 hover:border-gray-400 transition">
+          <span class="font-semibold">← Back</span>
+        </button>
+        <button type="submit" onclick="handleNext(event)" class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition">
+          Next →
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- Script -->
+  <script>
+    function goBack() {
+      window.location.href = "AppendixB.html";
+    }
+
+    function handleNext(event) {
+      event.preventDefault();
+      const form = event.target.closest("form");
+      const data = new FormData(form);
+      for (const [key, value] of data.entries()) {
+        localStorage.setItem(key, value);
+      }
+      window.location.href = "../Checklist/ChecklistEssential.html"; // Replace this with your actual filename
+    }
+
+    function addNew() {
+      const teachersContainer = document.getElementById('teachersContainer');
+      const newInput = `
+        <input type="text" placeholder="e.g., Maria Lopez" name="teacher_name[]" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" />
+      `;
+      teachersContainer.insertAdjacentHTML('beforeend', newInput);
+    }
+  </script>
+
+</body>
+</html>
