@@ -12,7 +12,7 @@
     <!-- Heading Section -->
     <h2 class="text-sm font-bold text-gray-600 mb-2 text-center">APPENDIX A</h2>
     <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-center">REGISTRATION FORM FOR THE PUBLIC/PRIVATE CDC/LC</h2>
- 
+
     <form onsubmit="handleNext(event)" class="space-y-6">
 
       <!-- Section 1 -->
@@ -26,13 +26,13 @@
         <label class="font-semibold whitespace-nowrap">2. Type:</label>
         <div class="flex flex-wrap gap-4">
           <label class="inline-flex items-center">
-            <input type="radio" name="type" value="Public" class="custom-green text-green-600 focus:ring-green-500 mr-2"> Public
+            <input type="radio" name="type" value="Public" class="text-green-600 focus:ring-green-500 mr-2"> Public
           </label>
           <label class="inline-flex items-center">
             <input type="radio" name="type" value="Private" class="text-green-600 focus:ring-green-500 mr-2"> Private
           </label>
         </div>
-      </div>         
+      </div>
 
       <!-- Private types -->
       <div class="flex flex-col md:flex-row items-start gap-2 md:gap-4">
@@ -119,9 +119,69 @@
           <label class="block font-medium mb-2 break-words">Name of Administrator/Director/Principal (Private CDC/LC):</label>
           <input type="text" placeholder="e.g., Maria L. Santos" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" name="admin_director" />
         </div>
-      </div>      
+      </div>
 
-      <!-- Buttons -->
+      <!-- Section 7 -->
+      <div>
+        <label class="block font-semibold mb-2">7. Name(s) of Child Development Teacher(s)/Worker(s)</label>
+        <div id="teachersContainer" class="space-y-3">
+          <input type="text" placeholder="e.g., Juan Dela Cruz" name="teacher_name[]" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" />
+        </div>
+        <div class="flex justify-end mt-2">
+          <button type="button" onclick="addNew()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg text-sm transition">+ Add New</button>
+        </div>
+      </div>
+
+      <!-- Section 8-9 -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+        <div>
+          <label for="contact_person" class="block text-sm font-medium text-gray-700">8. Contact Person of the Center:</label>
+          <input type="text" id="contact_person" name="contact_person" placeholder="e.g., Maria Santos" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" />
+        </div>
+        <div>
+          <label for="contact_number" class="block text-sm font-medium text-gray-700">Telephone/Mobile/Fax No. of the Center:</label>
+          <input type="text" id="contact_number" name="contact_number" placeholder="e.g., (02) 8123-4567 / 0917-123-4567" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">9. E-mail Address of the Center/Contact Person:</label>
+          <input type="email" id="email" name="email" placeholder="e.g., contact@center.org" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" />
+        </div>
+      </div>
+
+      <!-- Submitted and Noted -->
+      <div class="mt-10 space-y-10">
+        <div>
+          <p class="font-medium text-center mb-10">SUBMITTED BY:</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex flex-col items-center">
+              <input type="text" class="border-b border-black w-3/4 mb-2 cursor-pointer focus:outline-none text-center" placeholder="e.g., Juan Dela Cruz" />
+              <p class="text-m font-medium">Name & Signature above Name & Designation</p>
+              <p class="text-s italic text-gray-600">City/Municipal Social Development Officer</p>
+              <p class="text-s italic text-gray-600">ECCD Focal Person</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <input type="date" class="border-b border-black w-1/2 mb-2 cursor-pointer focus:outline-none text-center" />
+              <p class="text-sm font-medium">Date</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <p class="font-medium text-center mb-10">NOTED:</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex flex-col items-center">
+              <input type="text" class="border-b border-black w-3/4 mb-2 cursor-pointer focus:outline-none text-center" placeholder="e.g., Juan Dela Cruz" />
+              <p class="text-s italic text-gray-600">City/Municipal Social Welfare Development Officer/ECCD Focal Person</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <input type="date" class="border-b border-black w-1/2 mb-2 cursor-pointer focus:outline-none text-center" />
+              <p class="text-sm font-medium">Date</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
       <div class="flex justify-between items-center pt-6">
         <button type="button" onclick="goBack()" class="border border-gray-300 bg-white text-black px-6 py-2 rounded hover:bg-gray-200 hover:border-gray-400 transition">
           <span class="font-semibold">← Back</span>
@@ -130,7 +190,6 @@
           Next →
         </button>
       </div>
-
     </form>
   </div>
 
@@ -141,15 +200,20 @@
 
     function handleNext(event) {
       event.preventDefault();
-
-      const form = event.target;
+      const form = event.target.closest("form");
       const data = new FormData(form);
-
       for (const [key, value] of data.entries()) {
         localStorage.setItem(key, value);
       }
+      window.location.href = "../Appendix B/AppendixB.html";
+    }
 
-      window.location.href = "AppendixA1.html"; 
+    function addNew() {
+      const teachersContainer = document.getElementById('teachersContainer');
+      const newInput = `
+        <input type="text" placeholder="e.g., Maria Lopez" name="teacher_name[]" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" />
+      `;
+      teachersContainer.insertAdjacentHTML('beforeend', newInput);
     }
   </script>
 
