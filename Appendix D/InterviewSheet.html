@@ -24,12 +24,10 @@
             </tr>
           </thead>
           <tbody id="observationTableBody" class="bg-white divide-y divide-gray-200">
-            <!-- Initial 10 rows will be inserted here -->
           </tbody>
         </table>
       </div>
 
-      <!-- ADD NEW SHEET BUTTON -->
       <div class="flex justify-end mt-4">
         <button 
           onclick="addInterviewSheet()" 
@@ -52,7 +50,6 @@
     
   </div>
 
-  <!-- JavaScript Part -->
   <script>
     function autoResize(textarea) {
       textarea.style.height = 'auto';
@@ -95,25 +92,21 @@
 
     function addInterviewSheet() {
       const tableBody = document.getElementById('observationTableBody');
-      // Add only 1 row at a time
       tableBody.insertAdjacentHTML('beforeend', createRow());
     }
 
-    // Initial 10 rows upon loading
     window.onload = function() {
       for (let i = 0; i < 10; i++) {
         addInterviewSheet();
       }
     };
 
-    // Function for going back to the Observation Sheet page
     function goBack() {
-      window.location.href = 'ObservationSheet.html'; // Navigate to ObservationSheet
+      window.location.href = 'ObservationSheet.html'; 
     }
 
-    // Function for navigating to the Document Review Sheet
     function goToNextPage() {
-      window.location.href = 'DocumentReviewSheet.html'; // Navigate to DocumentReviewSheet
+      window.location.href = 'DocumentReviewSheet.html'; 
     }
   </script>
 

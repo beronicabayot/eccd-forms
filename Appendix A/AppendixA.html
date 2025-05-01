@@ -10,18 +10,16 @@
 
   <div class="max-w-6xl mx-auto bg-white shadow-md rounded-xl p-4 sm:p-6 md:p-8 space-y-6">
     <!-- Heading Section -->
-    <h2 class="text-sm font-bold text-gray-600 mb-2 text-center">APPENDIX A</h2>
+    <h2 class="text-lg font-bold text-gray-600 mb-2 text-center">APPENDIX A</h2>
     <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-center">REGISTRATION FORM FOR THE PUBLIC/PRIVATE CDC/LC</h2>
 
     <form onsubmit="handleNext(event)" class="space-y-6">
 
-      <!-- Section 1 -->
       <div>
         <label class="block font-semibold mb-2">1. Name of Child Development Center/Learning Center:</label>
-        <input type="text" placeholder="e.g., ABC Learning Center" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" name="center_name" />
+        <input type="text" placeholder="e.g., ABC Learning Center" requi class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" name="center_name" />
       </div>
 
-      <!-- Section 2 -->
       <div class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4">
         <label class="font-semibold whitespace-nowrap">2. Type:</label>
         <div class="flex flex-wrap gap-4">
@@ -34,7 +32,6 @@
         </div>
       </div>
 
-      <!-- Private types -->
       <div class="flex flex-col md:flex-row items-start gap-2 md:gap-4">
         <label class="font-semibold">If Private, indicate type:</label>
         <div class="flex flex-col sm:flex-row flex-wrap gap-2 sm:gap-4">
@@ -50,7 +47,6 @@
         </div>
       </div>
 
-      <!-- Address -->
       <div class="space-y-4">
         <h3 class="text-lg font-semibold">3. Address</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -84,7 +80,6 @@
         </div>
       </div>
 
-      <!-- Section 4 & 5 -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label class="block font-semibold mb-2">4. Date Established:</label>
@@ -109,7 +104,6 @@
         </div>
       </div>
 
-      <!-- Section 6 -->
       <div class="flex flex-col md:flex-row gap-4">
         <div class="w-full md:w-1/2">
           <label class="block font-semibold mb-2">6. Name of Barangay Captain/Authorized Person (Public CDC):</label>
@@ -121,7 +115,6 @@
         </div>
       </div>
 
-      <!-- Section 7 -->
       <div>
         <label class="block font-semibold mb-2">7. Name(s) of Child Development Teacher(s)/Worker(s)</label>
         <div id="teachersContainer" class="space-y-3">
@@ -132,7 +125,6 @@
         </div>
       </div>
 
-      <!-- Section 8-9 -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
         <div>
           <label for="contact_person" class="block text-sm font-medium text-gray-700">8. Contact Person of the Center:</label>
@@ -148,17 +140,33 @@
         </div>
       </div>
 
-      <!-- Submitted and Noted -->
       <div class="mt-10 space-y-10">
         <div>
           <p class="font-medium text-center mb-10">SUBMITTED BY:</p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div class="flex flex-col items-center">
-              <input type="text" class="border-b border-black w-3/4 mb-2 cursor-pointer focus:outline-none text-center" placeholder="e.g., Juan Dela Cruz" />
+
+              <div class="relative w-3/4 mb-2">
+                <input
+                  type="text"
+                  class="border-b border-black w-full pr-10 cursor-pointer focus:outline-none text-center"
+                  placeholder="e.g., Juan Dela Cruz"
+                />
+
+                <label for="signature-upload" class="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
+                    <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                    <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z"/>
+                  </svg>
+                </label>
+                <input type="file" id="signature-upload" accept="image/png, image/jpeg" class="hidden" />
+              </div>
+            
               <p class="text-m font-medium">Name & Signature above Name & Designation</p>
               <p class="text-s italic text-gray-600">City/Municipal Social Development Officer</p>
               <p class="text-s italic text-gray-600">ECCD Focal Person</p>
             </div>
+  
             <div class="flex flex-col items-center">
               <input type="date" class="border-b border-black w-1/2 mb-2 cursor-pointer focus:outline-none text-center" />
               <p class="text-sm font-medium">Date</p>
@@ -166,22 +174,33 @@
           </div>
         </div>
 
-        <div>
-          <p class="font-medium text-center mb-10">NOTED:</p>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="flex flex-col items-center">
-              <input type="text" class="border-b border-black w-3/4 mb-2 cursor-pointer focus:outline-none text-center" placeholder="e.g., Juan Dela Cruz" />
-              <p class="text-s italic text-gray-600">City/Municipal Social Welfare Development Officer/ECCD Focal Person</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="flex flex-col items-center">
+            <div class="relative w-3/4 mb-2">
+              <input
+                type="text"
+                class="border-b border-black w-full pr-10 cursor-pointer focus:outline-none text-center"
+                placeholder="e.g., Juan Dela Cruz"
+              />
+              <label for="signature-upload" class="absolute right-0 top-1/2 -translate-y-1/2 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload" viewBox="0 0 16 16">
+                  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5"/>
+                  <path d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z"/>
+                </svg>
+              </label>
+              <input type="file" id="signature-upload" accept="image/png, image/jpeg" class="hidden" />
             </div>
-            <div class="flex flex-col items-center">
-              <input type="date" class="border-b border-black w-1/2 mb-2 cursor-pointer focus:outline-none text-center" />
-              <p class="text-sm font-medium">Date</p>
-            </div>
+
+            <p class="text-s italic text-gray-600">City/Municipal Social Welfare Development Officer/ECCD Focal Person</p>
+          </div>
+
+          <div class="flex flex-col items-center">
+            <input type="date" class="border-b border-black w-1/2 mb-2 cursor-pointer focus:outline-none text-center" />
+            <p class="text-sm font-medium">Date</p>
           </div>
         </div>
       </div>
 
-      <!-- Navigation Buttons -->
       <div class="flex justify-between items-center pt-6">
         <button type="button" onclick="goBack()" class="border border-gray-300 bg-white text-black px-6 py-2 rounded hover:bg-gray-200 hover:border-gray-400 transition">
           <span class="font-semibold">← Back</span>

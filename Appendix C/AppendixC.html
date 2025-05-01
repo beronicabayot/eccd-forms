@@ -9,19 +9,16 @@
 <body class="bg-gray-50 text-gray-800 p-4 sm:p-6">
 
   <div class="max-w-6xl mx-auto bg-white shadow-md rounded-xl p-4 sm:p-6 md:p-8 space-y-6">
-    <!-- Heading Section -->
-    <h2 class="text-sm font-bold text-gray-600 mb-2 text-center">APPENDIX C</h2>
+    <h2 class="text-lg font-bold text-gray-600 mb-2 text-center">APPENDIX C</h2>
     <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-center">PROCESSING SHEET FOR PERMIT TO OPERATE FOR THE PRIVATE CDC/LC</h2>
  
     <form onsubmit="handleNext(event)" class="space-y-6">
 
-      <!-- Section 1 -->
       <div>
         <label class="block font-semibold mb-2">1. Name of Child Development Center/Learning Center:</label>
         <input type="text" placeholder="e.g., ABC Learning Center" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" name="center_name" />
       </div>
 
-      <!-- Section 2 -->
       <div class="flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-4">
         <label class="font-semibold whitespace-nowrap">2. Type:</label>
         <div class="flex flex-wrap gap-4">
@@ -37,7 +34,6 @@
         </div>
       </div>         
 
-      <!-- Address -->
       <div class="space-y-4">
         <h3 class="text-lg font-semibold">3. Address</h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -71,7 +67,6 @@
         </div>
       </div>
 
-      <!-- Section 4 & 5 -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <label class="block font-semibold mb-2">4. Date Established:</label>
@@ -96,33 +91,28 @@
         </div>
       </div>
 
-      <!-- Section 6 -->
       <div>
         <label class="block font-semibold mb-2">6. Name of Administrator/Director/Principal:</label>
         <input type="text" placeholder="e.g., ABC Learning Center" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" name="center_name" />
       </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-            <!-- Contact Person -->
             <div>
               <label for="contact-person" class="block text-sm font-medium text-gray-700">7. Contact Person of the Center:</label>
               <input type="text" id="contact-person" name="contact-person" placeholder="e.g., Maria Santos" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" />
             </div>
-    
-            <!-- Contact Number -->
+
             <div>
               <label for="contact-number" class="block text-sm font-medium text-gray-700">Telephone/Mobile/Fax No. of the Center:</label>
               <input type="text" id="contact-number" name="contact-number" placeholder="e.g., (02) 8123-4567 / 0917-123-4567" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" />
             </div>
-    
-            <!-- Email -->
+  
             <div>
               <label for="email" class="block text-sm font-medium text-gray-700">8. E-mail Address of the Center/Contact Person:</label>
               <input type="email" id="email" name="email" placeholder="e.g., contact@center.org" class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-green-500" />
             </div>
           </div>
 
-      <!-- Buttons -->
       <div class="flex justify-between items-center pt-6">
         <button type="button" onclick="goBack()" class="border border-gray-300 bg-white text-black px-6 py-2 rounded hover:bg-gray-200 hover:border-gray-400 transition">
           <span class="font-semibold">← Back</span>
@@ -137,7 +127,7 @@
 
   <script>
     function goBack() {
-  window.location.href = "../Checklist/ChecklistEssential.html";  // Replace this with the actual page URL you want
+  window.location.href = "../Checklist/ChecklistEssential.html";  
 }
 
     function handleNext(event) {
@@ -150,8 +140,7 @@
         localStorage.setItem(key, value);
       }
 
-      // Go to the next page
-      window.location.href = "../Checklist/ChecklistPermit.html"; // Replace this with your actual filename
+      window.location.href = "../Checklist/ChecklistPermit.html"; 
     }
   </script>
 

@@ -25,12 +25,10 @@
             </tr>
           </thead>
           <tbody id="observationTableBody" class="bg-white divide-y divide-gray-200">
-            <!-- Initial 10 rows will be inserted here -->
           </tbody>
         </table>
       </div>
 
-      <!-- ADD NEW SHEET BUTTON -->
       <div class="flex justify-end mt-4">
         <button 
           onclick="addDocumentReviewSheet()" 
@@ -52,8 +50,7 @@
     </div>
   </div>
 
-  <!-- JavaScript Part -->
-  <script>
+<script>
     function autoResize(textarea) {
       textarea.style.height = 'auto';
       textarea.style.height = textarea.scrollHeight + 'px';
@@ -98,7 +95,6 @@
       tableBody.insertAdjacentHTML('beforeend', createRow());
     }
 
-    // Initial 10 rows upon loading
     window.onload = function() {
       for (let i = 0; i < 10; i++) {
         addDocumentReviewSheet();

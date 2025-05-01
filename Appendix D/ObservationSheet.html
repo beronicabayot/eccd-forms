@@ -10,7 +10,7 @@
 <body class="bg-gray-100 p-4 sm:p-6 text-black">
 
   <div class="max-w-6xl mx-auto bg-white shadow-md rounded-xl p-6 sm:p-8 space-y-6">
-    <h3 class="text-xl font-bold text-gray-700 mb-2 text-center tracking-wide">APPENDIX D</h3>
+    <h3 class="text-lg font-bold text-gray-700 mb-2 text-center tracking-wide">APPENDIX D</h3>
     <h2 class="text-lg font-semibold text-gray-800 mb-8 text-center">WORKSHEETS FOR THE GRANTING OF RECOGNITION TO THE PUBLIC OR PRIVATE CDC/LC</h2>
     
     <div class="mb-6">
@@ -26,12 +26,10 @@
             </tr>
           </thead>
           <tbody id="observationTableBody" class="bg-white divide-y divide-gray-200">
-            <!-- Initial 10 rows will be inserted here -->
           </tbody>
         </table>
       </div>
 
-      <!-- ADD NEW SHEET BUTTON -->
       <div class="flex justify-end mt-4">
         <button 
           onclick="addObservationSheet()" 
@@ -44,12 +42,10 @@
     </div>
 
     <div class="flex justify-between items-center pt-6">
-      <!-- Back Button -->
       <button type="button" onclick="goBack()" class="border border-gray-300 bg-white text-black px-6 py-2 rounded hover:bg-gray-200 hover:border-gray-400 transition">
         <span class="font-semibold">← Back</span>
       </button>
       
-      <!-- Next Button -->
       <button 
         type="button" 
         onclick="goToNextPage()" 
@@ -59,7 +55,6 @@
       </button>
     </div>
   
-    <!-- JavaScript Part -->
     <script>
       function autoResize(textarea) {
         textarea.style.height = 'auto';
@@ -95,24 +90,19 @@
   
       function addObservationSheet() {
         const tableBody = document.getElementById('observationTableBody');
-        // Add only 1 row at a time
         tableBody.insertAdjacentHTML('beforeend', createRow());
       }
   
-      // Initial 10 rows upon loading
       window.onload = function() {
         for (let i = 0; i < 10; i++) {
           addObservationSheet();
         }
       };
   
-      // Function for navigating to the next page
       function goToNextPage() {
-        // Ensure 'InterviewSheet.html' is the correct file path in your project directory
-        window.location.href = 'InterviewSheet.html'; // Change this URL to your target file
+        window.location.href = 'InterviewSheet.html'; 
       }
   
-      // Function for going back to the previous page
       function goBack() {
   window.location.href = '../Checklist/ChecklistPermit.html';
 }
